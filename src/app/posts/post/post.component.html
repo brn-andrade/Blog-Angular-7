@@ -1,0 +1,12 @@
+<div class="card margin white">
+  <div class="container">
+    <h3><b>{{post?.title}}</b></h3>
+    <h5>{{post?.subtitle}}, <span class="opacity">{{post?.publication_date | date}}</span></h5>
+  </div>
+
+  <div class="container">
+    
+    <div [innerHTML]="post?.comment"></div>
+    
+  </div>
+</div>

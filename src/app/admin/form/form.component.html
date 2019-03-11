@@ -1,0 +1,44 @@
+<div class="card margin white">
+
+  <div class="container">
+    <form [formGroup]="form" novalidate style="margin: 10px !important">
+      <div class="input">
+        <div class="col m2 s3">
+          <label for="title">Titulo:</label>
+        </div>
+        <input formControlName="title" id="title" maxlength="40" class="input border" (input)="upperCase($event)"
+          type="text">
+      </div>
+
+      <div class="input">
+        <div class="col m2 s3">
+          <label for="subtitle">Subtitulo:</label>
+        </div>
+        <input formControlName="subtitle" id="subtitle" maxlength="60" class="input border" type="text">
+      </div>
+
+      <label for="comment" style="margin-bottom: 10px">Comentario:</label>
+      <br>
+      <textarea id="comment" formControlName="comment" class="border text-area" cols="30" rows="10"></textarea>
+
+      <br>
+      <br>
+      <div class="center" *ngIf="!id_post">
+        <button [disabled]="form.invalid" type="button" (click)="save(form.value)" class="bar-item button green">Salvar</button>
+      </div>
+
+      <div class="right" *ngIf="id_post" style="margin-bottom: 10px">
+        <button [disabled]="form.invalid" type="button" (click)="update(form.value)" class="bar-item button green">Salvar</button>
+        <button type="button" class="bar-item button red" (click)="openModalDelete = true">Excluir</button>
+      </div>
+    </form>
+
+    <!-- <pre>{{form.value | json}}</pre> -->
+
+    <!-- MODAL DELETE POST -->
+    <div *ngIf="openModalDelete">
+      <app-confirmation-modal (openModal)="openModalDelete = $event" (delete)="delete()"></app-confirmation-modal>
+    </div>
+
+  </div>
+</div>

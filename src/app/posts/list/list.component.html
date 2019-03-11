@@ -1,0 +1,22 @@
+<div class="col l12 s12">
+
+  <div class="card margin white" *ngFor="let post of posts">
+    <div class="container">
+      <h3><b>{{post.title}}</b></h3>
+      <h5>{{post.subtitle}}, <span class="opacity">{{post.publication_date | date}}</span></h5>
+    </div>
+
+    <div class="container">
+
+      <!-- Foi criado um pipe para exibir sempre o primeiro paragrafo -->
+      <div [innerHTML]="post.comment | firstParagraph"></div>
+
+      <div class="row">
+        <div class="col m8 s12">
+          <p><button type="button" [routerLink]="['./', post.id]" class="button padding-large white border"><b>Ler mais &raquo;</b></button></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
