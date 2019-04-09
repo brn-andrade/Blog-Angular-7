@@ -1,0 +1,18 @@
+.skip-link {
+    left: -100%;
+    position: absolute;
+}
+
+.skip-link:focus {
+    margin: 10px 10px;
+    left: 0%;
+    text-decoration: none;
+}
+
+.outline {
+    outline: 1 !important;
+}
+
+.outline-out {
+    outline: none;
+}

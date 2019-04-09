@@ -1,6 +1,6 @@
 import { IPost } from './../models/post.model';
 import { PostsService } from './../posts.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-list',
@@ -16,7 +16,7 @@ export class ListComponent implements OnInit {
   ngOnInit() {
     this.getAllPosts();
   }
-
+  
   getAllPosts() {
     this.service.getAll()
       .subscribe(response => {

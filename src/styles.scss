@@ -58,8 +58,6 @@ html {
   overflow: auto;
   overflow-x: hidden;
   @extend %font_body;
-
-  [type=button] {}
 }
 
 * {
@@ -90,11 +88,9 @@ header {
   display: block;
 }
 
-
 section {
   display: block;
 }
-
 
 [hidden] {
   display: none;
@@ -130,7 +126,6 @@ input {
   overflow: visible;
 }
 
-
 textarea {
   font: inherit;
   margin: 0;
@@ -142,14 +137,10 @@ button::-moz-focus-inner {
   padding: 0;
 }
 
-[type=button]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
-
-[type=search]::-webkit-search-cancel-button {}
-
-[type=search]::-webkit-search-decoration {}
 
 ::-webkit-input-placeholder {
   color: inherit;
@@ -291,7 +282,6 @@ h5 {
   padding-left: 8px;
   padding-right: 8px;
   text-align: center;
-  ;
 }
 
 .input {
@@ -394,7 +384,6 @@ h5 {
   }
 }
 
-
 .col {
   float: left;
   width: 100%;
@@ -473,7 +462,7 @@ h5 {
   width: 100%;
 }
 
-@media(min-width:601px) {
+@media (min-width: 601px) {
   .col {
     &.m1 {
       width: 8.33333%;
@@ -545,7 +534,7 @@ h5 {
   }
 }
 
-@media(min-width:993px) {
+@media (min-width: 993px) {
   .col {
     &.l1 {
       width: 8.33333%;
@@ -619,13 +608,13 @@ h5 {
   display: inline-block !important;
 }
 
-@media(max-width:1205px) {
+@media (max-width: 1205px) {
   .auto {
     max-width: 95%;
   }
 }
 
-@media(max-width:600px) {
+@media (max-width: 600px) {
   .modal-content {
     margin: 0 10px;
     width: auto !important;
@@ -638,10 +627,9 @@ h5 {
   .hide-small {
     display: none !important;
   }
-
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
   .modal-content {
     width: 500px;
   }
@@ -651,13 +639,13 @@ h5 {
   }
 }
 
-@media(max-width:992px) and(min-width:601px) {
+@media (max-width: 992px) and(min-width:601px) {
   .hide-medium {
     display: none !important;
   }
 }
 
-@media(max-width:992px) {
+@media (max-width: 992px) {
   .main {
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -686,13 +674,12 @@ h5 {
   bottom: 0;
 }
 
-
 .card {
   box-shadow: 0 4px 10px 0 $black_20, 0 4px 20px 0 $black_19;
 }
 
 .opacity {
-  opacity: 0.60;
+  opacity: 0.6;
 }
 
 .tiny {
@@ -831,7 +818,7 @@ h5 {
   background-color: $dark-gray !important;
 }
 
-[type=button]:-moz-focusring {
+[type="button"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -840,5 +827,15 @@ h5 {
 }
 
 .bordered tr {
-    border-bottom: 1px solid $gray;
-  }
+  border-bottom: 1px solid $gray;
+}
+
+.visuallyHidden {
+  border: 0;
+  clip-path: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

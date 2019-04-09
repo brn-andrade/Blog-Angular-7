@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
   <meta charset="utf-8">
@@ -9,17 +9,20 @@
 </head>
 
 <body class="light-grey">
+  <a href="#" (click)="skipMain(); false" class="skip-link tag">Ir para conteúdo Principal</a>
 
   <div class="content">
 
     <!-- header component -->
     <app-header></app-header>
 
-    <div class="row">
-      <!-- Router -->
-      <router-outlet></router-outlet>
-      
-    </div>
+    <main #main tabindex="-1" class="outline-out">
+      <div class="row">
+        <!-- Router -->
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+
   </div>
 
   <!-- footer -->

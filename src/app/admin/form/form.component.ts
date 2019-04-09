@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { PostsService } from '../../posts/posts.service';
 import { IPost } from '../../posts/models/post.model';
 import { Component, OnInit } from '@angular/core';

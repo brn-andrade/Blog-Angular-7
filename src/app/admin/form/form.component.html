@@ -1,20 +1,23 @@
 <div class="card margin white">
 
-  <div class="container">
+  <div class="container" >
     <form [formGroup]="form" novalidate style="margin: 10px !important">
+      <section id="erros" aria-live="assertive" tabindex="-1">
+      </section>
       <div class="input">
         <div class="col m2 s3">
-          <label for="title">Titulo:</label>
+          <label for="title" aria-live="assertive">Titulo:</label>
         </div>
         <input formControlName="title" id="title" maxlength="40" class="input border" (input)="upperCase($event)"
-          type="text">
+          type="text" required aria-invalid="true">
       </div>
 
       <div class="input">
         <div class="col m2 s3">
-          <label for="subtitle">Subtitulo:</label>
+          <label for="subtitle" aria-live="assertive">Subtitulo:</label>
         </div>
-        <input formControlName="subtitle" id="subtitle" maxlength="60" class="input border" type="text">
+        <input formControlName="subtitle" id="subtitle" maxlength="60" class="input border" type="text" required
+          required aria-invalid="true">
       </div>
 
       <label for="comment" style="margin-bottom: 10px">Comentario:</label>
@@ -24,11 +27,13 @@
       <br>
       <br>
       <div class="center" *ngIf="!id_post">
-        <button [disabled]="form.invalid" type="button" (click)="save(form.value)" class="bar-item button green">Salvar</button>
+        <button [disabled]="form.invalid" type="button" (click)="save(form.value)"
+          class="bar-item button green">Salvar</button>
       </div>
 
       <div class="right" *ngIf="id_post" style="margin-bottom: 10px">
-        <button [disabled]="form.invalid" type="button" (click)="update(form.value)" class="bar-item button green">Salvar</button>
+        <button [disabled]="form.invalid" type="button" (click)="update(form.value)"
+          class="bar-item button green">Salvar</button>
         <button type="button" class="bar-item button red" (click)="openModalDelete = true">Excluir</button>
       </div>
     </form>

@@ -1,32 +1,38 @@
 <div class="container">
-  <button [routerLink]="['./novo']" type="button" class="button green right">Novo</button>
+  <button [routerLink]="['./novo']" aria-label="Utilizado para criar nova postagem" type="button"
+    class="button green right">Novo</button>
 </div>
 
 <div class="card margin white">
 
-  <div class="container">
-    <h3><b>LISTA DE POSTAGEM</b></h3>
-  </div>
+  <!-- <div class="container">
+    <h2 style="font-size: 24px"><b>LISTA DE POSTAGEM</b></h2>
+  </div> -->
 
   <div class="container">
     <div class="responsive">
-      <table class="table bordered">
+      <table summary="Table aonde exibe duas colunas a primeira coluna é referente a postagem
+         (título e subtítulo) e a segunda referente a ações (editar e exluir uma postagem)" class="table bordered">
+        <caption>
+          <span class="left caption"><b>LISTA DE POSTAGEM</b></span>
+        </caption>
         <thead>
           <tr>
-            <th class="center">Postagens</th>
-            <th></th>
+            <th id="post" scope="col" class="center">Postagens</th>
+            <th id="acao" scope="col" aria-label="Coluna de Ações"></th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let post of posts">
-            <td>
+            <td scope="row" headers="post">
               {{post.title}}
               <br>
               {{post.subtitle}}
             </td>
-            <td class="right" style="white-space:nowrap;">
+            <td scope="row" headers="acao" class="right" style="white-space:nowrap;">
               <div class="show-inline-block">
-                <button type="button" class="bar-item button green medium" [routerLink]="['./editar', post.id]">Editar</button>
+                <button type="button" class="bar-item button green medium"
+                  [routerLink]="['./editar', post.id]">Editar</button>
                 <button type="button" class="bar-item button red medium" (click)="openModal(post.id)">Excluir</button>
               </div>
             </td>
